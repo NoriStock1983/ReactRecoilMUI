@@ -1,0 +1,98 @@
+{
+    "common":{
+       "title":"ITOS",
+       "menu":"Menu",
+       "required":"Required",
+       "search":"Search",
+       "new":"New",
+       "edit":"Edit",
+       "delete":"Delete",
+       "cancel":"Cancel",
+       "searchCondition":"Search Condition",
+       "list":"List"
+    },
+    "auth":{
+       "title":"Login",
+       "usercd":"Usercd",
+       "password":"Password",
+       "signin":"SignIn",
+       "message":{
+          "required_usercd":"Usercd is required.",
+          "required_password":"Password is required."
+       },
+       "logout":"LogOut"
+    },
+  "TEST":{
+     "test":"TEST"
+  },
+  "language":{
+     "ja":"Japanese"
+  },
+   "incidentlist":{
+       "functiontitle":"Incident List",
+       "search_condition":{
+         "search_condition":"Search Condition",
+         "search_from":"InquiryMonth(FROM)",
+         "search_to":"InquiryMonth(TO)",
+         "search_inquiry_companynm":"Inquiry_Company",
+         "search_inquiry_deptnm":"Inquiry_Dept",
+         "search_incharge":"Incharge",
+         "search_inquiry_category":"Category",
+         "search_inquiry_subcategory":"SubCategory",
+         "search_inquiry_status":"Status",
+         "search_inquiry_priority":"Priority",
+         "search_inquiry_urgency":"Urgency"
+       },
+       "list":{
+         "":""
+       }
+   },
+   "usermst":{
+      "title":"User Mastermaintenance",
+      "usercd":"UserCode",
+      "user_f_name":"FirstName",
+      "user_l_name":"LastName",
+      "belonged_company_cd":"Belonged company Code",
+      "belonged_company_nm":"Belonged company Name",
+      "belonged_dept_cd":"Belonged Dept Code",
+      "belonged_dept_nm":"Belonged Dept Name",
+      "authority_cd":"Auth Code",
+      "authority_nm":"Auth Name",
+      "language":"Language",
+      "activeflg":"Active Flg",
+      "detail":{
+         "title":"Update Usermst Maintenance",
+         "usercd":"UserCode",
+         "user_f_name":"FirstName",
+         "user_l_name":"LastName",
+         "belonged_company_cd":"Belonged company Code",
+         "belonged_company_nm":"Belonged company Name",
+         "belonged_dept_cd":"Belonged Dept Code",
+         "belonged_dept_nm":"Belonged Dept Name",
+         "authority_cd":"Auth Code",
+         "authority_nm":"Auth Name",
+         "language":"Language",
+         "activeflg":"Active Flg"
+
+      },
+      "delete":{
+         "title":"Delete Usermst Maintenance",
+         "message":"Are you sure you want to delete this usermst data?"
+      }
+   },
+   "codemst":{
+      "title":"Code Mastermaintenance",
+      "code1":"Code1",
+      "code2":"Code2",
+      "codename1":"CodeName1",
+      "codename2":"CodeName2",
+      "activeflg":"ActiveFlg",
+      "detail":{
+         "title":"Update Codemst"
+      },
+      "delete":{
+         "title":"Delete Codemst",
+         "message":"Are you sure you want to delete this codemst data?"
+      }
+   }
+ }

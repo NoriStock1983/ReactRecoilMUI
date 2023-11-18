@@ -1,0 +1,62 @@
+version: '3.0'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: ./build/Dockerfile
+    volumes:
+      - ./incident/:/incident/
+    tty: true
+    command: go run ./cmd/incidentapp/main.go
+    ports:
+      - 8000:8000
+
+
+#version: '3' # composeファイルのバージョン
+#services:
+#  incident_api: # サービス名
+#    container_name: incident
+#    build: # ビルドに使うDockerファイルのパス
+#      context: .
+#      dockerfile: ./build/Dockerfile
+#    volumes: # マウントディレクトリ
+#      - .:/incident
+#    tty: true # コンテナの永続化
+#    env_file: # .envファイル
+#      - ./build/.go_env
+#    environment:
+#      - TZ=Asia/Tokyo
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./web/Dockerfile
+    volumes:
+      - ./:/web
+    tty: true
+    command: sh -c 'cd ./web/frontend && npm start'
+    ports:
+      - 3000:3000
+
+  db:
+    image: postgres:latest
+    container_name: postgres_test
+    # コンテナが落ちたら、再起動する。
+    restart: always
+    # image作成時の初期設定の値を設定する
+    environment:  
+        ENV LANG: ja_JP.UTF-8        # postgres内の文字コードを指定
+        TZ: Asia/Tokyo               # postgres内のTimeZoneを指定
+        POSTGRES_DB: Incident_DB
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+    # Postgresに接続するためのポート（外部からのアクセス時のポート：docker内部からのアクセス時のポート）
+    ports: 
+        - "5436:5432"
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d    # 追加(scriptフォルダ内にあるスクリプトを実行する。)
+      - db-store:/var/lib/postgresql/data       # DBデータ永続化
+
+# DBデータ永続化
+volumes:
+  db-store:
